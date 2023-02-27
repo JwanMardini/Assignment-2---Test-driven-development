@@ -1,14 +1,14 @@
 import random
-import os
 
 player1Score = 0
 player2Score = 0
-turn = 1 
+turn = 1
+
 
 def takeTurn():
     global player1Score
     global player2Score
-    global turn 
+    global turn
     roll = "y"
     turnScore = 0
     while roll == "y":
@@ -47,7 +47,7 @@ def takeTurn():
 def gameTurn():
     global player1Score
     global player2Score
-    global turn 
+    global turn
     while player1Score < 100 and player2Score < 100:
         print("The current score is")
         print("Player 1:", player1Score)
@@ -60,6 +60,7 @@ def gameTurn():
     elif player2Score >= 100:
         print("Player 2 wins")
 
+
 def splashScreen():
     print("----------------------")
     print("----------------------")
@@ -67,6 +68,7 @@ def splashScreen():
     print("----------------------")
     print("----------------------")
     print()
+
 
 splashScreen()
 play = "y"
