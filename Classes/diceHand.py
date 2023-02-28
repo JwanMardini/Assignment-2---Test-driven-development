@@ -3,9 +3,9 @@ import random
 
 
 class DiceHand():
-    def __init__(self) -> None:
-        pass
+    def __init__(self, die) -> None:
+        self.die = die
 
     def roll(self):
-        return random.randint(1, Dice.get_faces())
+        return random.randint(1, self.die.get_faces())
     
