@@ -1,4 +1,8 @@
 class HighScore:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69588e0519bd8c3d032c6acaf1c77cd17899aa19
     def __init__(self) -> None:
         self._highScore = 100
 
