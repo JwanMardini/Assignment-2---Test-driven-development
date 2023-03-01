@@ -8,4 +8,3 @@ class DiceHand():
 
     def roll(self):
         return random.randint(1, self.die.get_faces())
-    
