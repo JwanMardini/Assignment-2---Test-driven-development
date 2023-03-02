@@ -1,6 +1,4 @@
 class HighScore:
-#<<<<<<< HEAD
-=======
 
     def __init__(self) -> None:
         self._highScore = 100

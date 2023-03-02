@@ -23,7 +23,7 @@ command = True
 
 
 def players_turn(player, diceHand, name):
- 
+
     turn = 1
     while turn == 1:
         print()
