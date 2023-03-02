@@ -14,6 +14,7 @@ def main():
         game_header = Game()
         print(game_header.header())
         controller = True
+        #command kan göras som en egen metod? Blir lättare med färre while loop i samma metod?
         while (controller):
             try:
                 choice = int(input("Select 1 for one player, 2 for two players: "))
@@ -33,6 +34,11 @@ def main():
             computer = Intelligence(mode, score=0, currentScore=0)
 
             while (player.get_score() < 100 and computer.get_score() < 100):
+            player = Player(name, score = 0, currentScore = 0)
+            computer = Intelligence(mode, score = 0, currentScore = 0)
+            
+            ## en metod för player bör göras.
+            while(player.get_score() < 100 and computer.get_score() < 100):
                 print()
                 print(f"{name} score: {player.get_score()}")
                 print(f"Computers score: {computer.get_score()}")
