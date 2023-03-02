@@ -5,32 +5,34 @@ from dice import Dice
 from diceHand import DiceHand
 from highScore import HighScore
 
+
 def main():
     die = Dice()
     diceHand = DiceHand(die)
     command = True
-    while(command):
+    while (command):
         game_header = Game()
         print(game_header.header())
         controller = True
         while (controller):
             try:
                 choice = int(input("Select 1 for one player, 2 for two players: "))
-            except:
+            except ValueError:
                 print("Invalid input, try again")
+
             if choice == 1:
                 statment = True
-                while(statment):
+                while (statment):
                     mode = input("Enter (e) for easy mode and (h) for hard mode: ")
                     if mode != 'e' and mode != 'h':
                         print("Invalid input, try again")
                     else:
                         statment = False
             name = str(input("Enter your name: "))
-            player = Player(name, score = 0, currentScore = 0)
-            computer = Intelligence(mode, score = 0, currentScore = 0)
+            player = Player(name, score=0, currentScore=0)
+            computer = Intelligence(mode, score=0, currentScore=0)
 
-            while(player.get_score() < 100 and computer.get_score() < 100):
+            while (player.get_score() < 100 and computer.get_score() < 100):
                 print()
                 print(f"{name} score: {player.get_score()}")
                 print(f"Computers score: {computer.get_score()}")
@@ -38,8 +40,8 @@ def main():
                 if turn == 1:
                     print()
                     r = True
-                    while(r):
-                        roll = diceHand.roll()
+                    roll = diceHand.roll()
+                    while (r):
                         print(f"You rolled a {roll}")
                         if roll == 1:
                             print("Your turn is over")
@@ -68,28 +70,8 @@ def main():
                                 # Intelligence
                                 pass
                             else:
-                                pass
+                                break
 
 
-
-
-                        
-
-
-
-
-
-        
-
-
-
-
-
-    
-
-
-
-
-
-if __name__ == "__main__":
+ if __name__ == "__main__":
     main()
