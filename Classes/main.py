@@ -24,7 +24,8 @@ def main():
             if choice == 1:
                 statment = True
                 while (statment):
-                    mode = input("Enter (e) for easy mode and (h) for hard mode: ")
+                    game.get
+                    mode = input("-> ")
                     if mode != 'e' and mode != 'h':
                         print("Invalid input, try again")
                     else:
