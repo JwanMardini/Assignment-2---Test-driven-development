@@ -148,6 +148,9 @@ def CPU_gameSetUp(player, player2):
             elif choice == "3":
                 controller = False
                 computerTurn(player, player2, game)
+            else:
+                print("Invalid input, try again.")
+
         # game.ingameMenu(choice, player)
         # input("Hit enter to continue \n")
         # computerTurn(player, player2, game)
