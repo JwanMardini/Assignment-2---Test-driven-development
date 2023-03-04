@@ -1,4 +1,5 @@
-from diceHand import DiceHand
+from diceHandtest import DiceHand
+from dice import Dice
 import random
 import statistics
 random.seed(1)
@@ -6,18 +7,19 @@ class Histogram:
     def __init__(self, list_of_score) -> None:
         self._list = list_of_score
 
-    def showStatisic(self):
+    def showStatistic(self):
      dice_rolled  = [0] * (self._list[0].get_faces() + 1)
      for score in self._list:
         dice_rolled[score] += 1
-     for i in range(1,7):
-        print(str(i).rjust(2) +  "*"*dice_rolled[i])
+     for i in range(1, len(dice_rolled)):
+        print(f'{i}: {"*" * dice_rolled[i]}')
         
         
 
-dice = DiceHand(5)
-scores = DiceHand.roll(100)
-histogram = Histogram(dice, scores)
+dice = Dice(6)
+dice_hand = DiceHand(dice)
+scores = dice_hand.roll(100)
+histogram = Histogram(scores)
 histogram.showStatistic()
 
         
