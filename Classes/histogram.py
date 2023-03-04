@@ -4,7 +4,7 @@ import random
 import statistics
 random.seed(1)
 class Histogram:
-    def __init__(self, list_of_score) -> None:
+    def __init__(self, list_of_score) -> None: 
         self._list = list_of_score
 
     def showStatistic(self):

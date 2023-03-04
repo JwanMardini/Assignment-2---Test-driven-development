@@ -20,13 +20,13 @@ def main():
                 play = "y"
                 while (play == "y"):
                     twoPlayers()
-                    play = input("Do you want to play again(y/n)").lower
+                    play = input("Do you want to play again(y/n)").lower()
                 print("Goodbye")
             elif choice == 1:
                 play = "y"
                 while (play == "y"):
                     difficulty_mode()
-                    play = input("Do you want to play again(y/n)").lower
+                    play = input("Do you want to play again(y/n)").lower()
                 print("Goodbye")
         except ValueError:
             print("Invalid input, try again.")
