@@ -1,4 +1,3 @@
-
 class Game:
     def __init__(self):
         self._header = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************\n"
