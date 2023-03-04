@@ -77,7 +77,7 @@ def playerTurn(player_1, player_2, turn):
 
 def twoPlayers_gameSetUp(player, player2):
     game = Game()
-    high_score = HighScore().get_highScore
+    high_score = HighScore().get_highScore()
     while (player.get_score() < high_score and player2.get_score() < high_score):
         print(f"{player.get_name()} score: {player.get_score()}")
         print(f"{player2.get_name()} score: {player2.get_score()}")
@@ -132,13 +132,28 @@ def CPU_gameSetUp(player, player2):
         elif game.get_turn() == 2:
             print("it is " + player2.get_name() + " turn")
             print()
-        input("Hit enter to continue ")
+        #input("Hit enter to continue ")
         print()
         print(game.get_optionMenu())
-        choice = int(input("-> "))
-        game.ingameMenu(choice, player)
-        input("Hit enter to continue \n")
-        computerTurn(player, player2, game)
+        controller = True
+        while (controller):
+            choice = input("-> ")
+            if choice == "1":
+                controller = False
+                player_name = input("Type in the new name: ")
+                player.set_name(player_name)
+            elif choice == "2":
+                controller = False
+                exit()
+            elif choice == "3":
+                controller = False
+                computerTurn(player, player2, game)
+            else:
+                print("Invalid input, try again.")
+
+        # game.ingameMenu(choice, player)
+        # input("Hit enter to continue \n")
+        # computerTurn(player, player2, game)
     if player.get_score >= 100:
         game.end_game(player.get_name(), player.get_score())
     elif player2.get_score() >= 100:
