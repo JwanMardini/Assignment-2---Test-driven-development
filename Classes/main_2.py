@@ -11,20 +11,27 @@ def main():
     print(game.header())
     print()
     print(game.get_startMenu())
-    choice = int(input("-> "))
-    if choice == 2:
-        print()
-        play = "y"
-        while (play == "y"):
-            twoPlayers()
-            play = input("Do you want to play again(y/n)").lower
-        print("Goodbye")
-    elif choice == 1:
-        play = "y"
-        while (play == "y"):
-            computer()
-            play = input("Do you want to play again(y/n)").lower
-        print("Goodbye")
+    choice_controller = True
+    while (choice_controller):
+        try:
+            choice = int(input("-> "))
+            if choice == 2:
+                print()
+                play = "y"
+                while (play == "y"):
+                    twoPlayers()
+                    play = input("Do you want to play again(y/n)").lower
+                print("Goodbye")
+            elif choice == 1:
+                play = "y"
+                while (play == "y"):
+                    difficulty_mode()
+                    play = input("Do you want to play again(y/n)").lower
+                print("Goodbye")
+        except ValueError:
+            print("Invalid input, try again.")
+            print()
+            print(game.get_startMenu())
 
 
 def twoPlayers():
@@ -87,23 +94,35 @@ def twoPlayers_gameSetUp(player, player2):
         game.end_game(player.get_name(), player.get_score())
     elif player2.get_score() >= 100:
         game.end_game(player2.get_name(), player2.get_score())
+        
 
-
-def computer():
+def difficulty_mode():
+    game = Game().get_defficultyMenu()
     name = input("Enter your name: ")
     player = Player(name, 0)
-    level = input("Enter (e) for easy level or (h) for hard: ")
-    if level == "e":
-        computer = Intelligence(-20, -20)
-    elif level == "h":
-        computer = Intelligence(20, 20)
+    computer = Intelligence(-20, 20)
+    choice_controller = True
+    while (choice_controller):
+        try:
+            print(game)
+            mode = str(input("-> ").lower())
+            if mode == "e":
+                choice_controller = False
+                computer = Intelligence(-20, - 20)
+            elif mode == "h":
+                choice_controller = False
+                computer = Intelligence(20, 20)
+        except TypeError:
+            print("Invalid input, try again.")
+            print()
     CPU_gameSetUp(player, computer)
+    
 
 
 def CPU_gameSetUp(player, player2):
     game = Game()
-    high_score = HighScore()
-    while (player.get_score() < high_score.get_highScore() and player2.get_score() < high_score.get_highScore()):
+    high_score = HighScore().get_highScore()
+    while (player.get_score() < high_score and player2.get_score() < high_score):
         print(f"{player.get_name()} score: {player.get_score()}")
         print(f"{player2.get_name()} score: {player2.get_score()}")
         print()
@@ -114,6 +133,11 @@ def CPU_gameSetUp(player, player2):
             print("it is " + player2.get_name() + " turn")
             print()
         input("Hit enter to continue ")
+        print()
+        print(game.get_optionMenu())
+        choice = int(input("-> "))
+        game.ingameMenu(choice, player)
+        input("Hit enter to continue \n")
         computerTurn(player, player2, game)
     if player.get_score >= 100:
         game.end_game(player.get_name(), player.get_score())
