@@ -132,7 +132,7 @@ def CPU_gameSetUp(player, player2):
         elif game.get_turn() == 2:
             print("it is " + player2.get_name() + " turn")
             print()
-        #input("Hit enter to continue ")
+        # input("Hit enter to continue ")
         print()
         print(game.get_optionMenu())
         controller = True

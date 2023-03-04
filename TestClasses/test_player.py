@@ -34,7 +34,7 @@ class test_Player(unittest.TestCase):
         player = Player("Name", 0)
 
         exp = 10
-        player.set_score(30)
+        player.set_score(exp)
         res = player.get_score()
         self.assertEqual(res, exp)
 

@@ -25,10 +25,10 @@ Press 2 to quit game\nPress 3 to roll\n'''
 
     def get_startMenu(self):
         return self._startMenu
-    
+
     def get_optionMenu(self):
         return self._option_menu
-    
+
     def get_defficultyMenu(self):
         return self._difficultyMenu
 
