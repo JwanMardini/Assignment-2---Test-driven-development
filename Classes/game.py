@@ -19,9 +19,6 @@ Press 2 to quit game\nPress 3 to roll\n'''
     def get_turn(self):
         return self._turn
 
-    def set_startMenu(self, menu):
-        self._startMenu = menu
-
     def get_startMenu(self):
         return self._startMenu
 
