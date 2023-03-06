@@ -1,4 +1,3 @@
-
 class Game:
     def __init__(self):
         self._header = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************\n"
@@ -20,15 +19,12 @@ Press 2 to quit game\nPress 3 to roll\n'''
     def get_turn(self):
         return self._turn
 
-    def set_startMenu(self, menu):
-        self._startMenu = menu
-
     def get_startMenu(self):
         return self._startMenu
-    
+
     def get_optionMenu(self):
         return self._option_menu
-    
+
     def get_defficultyMenu(self):
         return self._difficultyMenu
 

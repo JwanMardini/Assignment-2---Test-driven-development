@@ -1,16 +1,19 @@
 import unittest
 from Classes.diceHand import DiceHand
+from Classes.dice import Dice
 
 
 class test_diceHand(unittest.TestCase):
     def test_init_default_object(self):
-        res = DiceHand()
+        die = Dice()
+        res = DiceHand(die)
         exp = DiceHand
 
         self.assertIsInstance(res, exp)
 
     def test_roll(self):
-        obj = DiceHand()
+        die = Dice()
+        obj = DiceHand(die)
 
         res = obj.roll()
         self.assertGreaterEqual(res, 1)
