@@ -1,4 +1,4 @@
-from Classes.player import Player
+from player import Player
 
 
 class Intelligence(Player):

@@ -1,4 +1,4 @@
-from Classes.dice import Dice
+from dice import Dice
 import random
 
 
