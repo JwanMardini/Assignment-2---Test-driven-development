@@ -53,7 +53,7 @@ class test_game(unittest.TestCase):
 
         res = game.get_optionMenu()
         exp = '''Press 1 to change name
-Press 2 to quit game\nPress 3 to roll\n'''
+Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
         self.assertEqual(res, exp)
 
     def test_get_defficultyMenu(self):
