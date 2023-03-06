@@ -211,6 +211,7 @@ def computerTurn(player_1, player_2, turn):
         else:
             player_2.set_score(player_2.get_score() + turnScore)
 
+
 def end_game(player1, player2):
     game = Game()
     winner = player1 if player1.get_score() >= 100 else player2
