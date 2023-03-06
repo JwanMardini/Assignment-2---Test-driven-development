@@ -1,10 +1,10 @@
 class Game:
     def __init__(self):
-        self._header = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************\n"
+        self._header = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************"
         self._turn = 1
         self._startMenu = "Enter 1 for one player game\nEnter 2 for two players game"
         self._option_menu = '''Press 1 to change name
-Press 2 to quit game\nPress 3 to roll\n'''
+Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
         self._difficultyMenu = '''Enter (e) for easy mode and (h) for hard mode: '''
 
     def header(self):
@@ -28,11 +28,12 @@ Press 2 to quit game\nPress 3 to roll\n'''
     def get_defficultyMenu(self):
         return self._difficultyMenu
 
-    # def ingameMenu(self, choice, player):
-    #     if choice == 1:
-    #         player_name = input("Type in the new name: ")
-    #         player.set_name(player_name)
-    #     elif choice == 2:
-    #         exit()
-    #     else:
-    #         pass
+    def get_rules(self):
+        return """1. Players take turns with a die.
+2. On a player’s turn he/she can roll a die as many times as they like.
+3. If a roll is a 2, 3, 4, 5, or 6, the player adds that many points to their score for the turn.
+4. A player may choose to end their turn at any time and “bank” their points.
+5. If a player rolls a 1, they lose all their unbanked points and their turn is over."""
+
+
+

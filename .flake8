@@ -4,3 +4,5 @@ exclude =
     __pycache__,
     .venv,
     test/
+max-line-length = 1000
+enable-extensions = pylint,mccabe
