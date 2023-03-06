@@ -4,6 +4,7 @@ from intelligence import Intelligence
 from dice import Dice
 from diceHand import DiceHand
 from highScore import HighScore
+import time
 
 
 def main():
@@ -78,7 +79,7 @@ def playerTurn(player_1, player_2, turn):
 def twoPlayers_gameSetUp(player, player2):
     game = Game()
     high_score = HighScore().get_highScore()
-    while (player.get_score() < high_score and player2.get_score() < high_score):
+    while (player.get_score() <= high_score or player2.get_score() <= high_score):
         print(f"{player.get_name()} score: {player.get_score()}")
         print(f"{player2.get_name()} score: {player2.get_score()}")
         print()
@@ -90,9 +91,9 @@ def twoPlayers_gameSetUp(player, player2):
             print()
         input("Hit enter to continue ")
         playerTurn(player, player2, game)
-    if player.get_score >= 100:
+    if player.get_score >= 10:
         game.end_game(player.get_name(), player.get_score())
-    elif player2.get_score() >= 100:
+    elif player2.get_score() >= 10:
         game.end_game(player2.get_name(), player2.get_score())
         
 
@@ -154,9 +155,9 @@ def CPU_gameSetUp(player, player2):
         # game.ingameMenu(choice, player)
         # input("Hit enter to continue \n")
         # computerTurn(player, player2, game)
-    if player.get_score >= 100:
+    if player.get_score() >= 10:
         game.end_game(player.get_name(), player.get_score())
-    elif player2.get_score() >= 100:
+    elif player2.get_score() >= 10:
         game.end_game(player2.get_name(), player2.get_score())
 
 
@@ -180,13 +181,16 @@ def computerTurn(player_1, player_2, turn):
             else:
                 turnScore = turnScore + die_num
                 print("Your turn so far is ", turnScore)
-                roll = "n"
-                roll = input("Do you want to roll again(y/n)? ").lower()
+                if turnScore <= 10:
+                    roll = "n"
+                else:
+                    roll = input("Do you want to roll again(y/n)? ").lower()
     else:
         cpu_die = 0
         while (cpu_die != 1):
             cpu_die = diceHand.roll()
             print(player_2.get_name(), " rolled ", cpu_die)
+            time.sleep(2)
             print()
             turnScore = turnScore + cpu_die
             if turnScore > 10 and turnScore < 20:
@@ -211,9 +215,10 @@ def computerTurn(player_1, player_2, turn):
         else:
             player_2.set_score(player_2.get_score() + turnScore)
 
+
 def end_game(player1, player2):
     game = Game()
-    winner = player1 if player1.get_score() >= 100 else player2
+    winner = player1 if player1.get_score() >= 10 else player2
     game.end_game(winner.get_name(), winner.get_score())
 
 
