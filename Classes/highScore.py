@@ -1,7 +1,7 @@
 class HighScore:
 
     def __init__(self) -> None:
-        self._highScore = 10
+        self._highScore = 100
 
     def set_highScore(self, new_highScore):
         self._highScore = new_highScore
