@@ -13,7 +13,7 @@ class test_game(unittest.TestCase):
         game = Game()
 
         res = game.header()
-        exp = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************\n"
+        exp = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************"
         self.assertEqual(res, exp)
     
     @patch('builtins.print')
