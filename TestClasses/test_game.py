@@ -62,6 +62,17 @@ Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
         res = game.get_defficultyMenu()
         exp = '''Enter (e) for easy mode and (h) for hard mode: '''
         self.assertEqual(res, exp)
+    
+    def test_get_rules(self):
+        game = Game()
+
+        res = game.get_rules()
+        exp = """1. Players take turns with a die.
+2. On a player’s turn he/she can roll a die as many times as they like.
+3. If a roll is a 2, 3, 4, 5, or 6, the player adds that many points to their score for the turn.
+4. A player may choose to end their turn at any time and “bank” their points.
+5. If a player rolls a 1, they lose all their unbanked points and their turn is over."""
+        self.assertEqual(res, exp)
 
 
 if __name__ == "__main__":
