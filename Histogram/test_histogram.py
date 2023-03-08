@@ -1,8 +1,8 @@
 """Test the Histogram class."""
 
 import unittest
-from Classes.histogram import Histogram
-from Classes.dice import Dice
+from Histogram.histogram import Histogram
+from Dice.dice import Dice
 
 
 class TestHistogram(unittest.TestCase):

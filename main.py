@@ -1,12 +1,12 @@
 """The main program to run the game pig dice."""
 import time
-from game import Game
-from player import Player
-from intelligence import Intelligence
-from dice import Dice
-from dice_hand import DiceHand
-from high_score import HighScore
-from histogram import Histogram
+from Game.game import Game
+from Player.player import Player
+from Intelligence.intelligence import Intelligence
+from Dice.dice import Dice
+from DiceHand.dice_hand import DiceHand
+from Highscore.high_score import HighScore
+from Histogram.histogram import Histogram
 
 
 def main():

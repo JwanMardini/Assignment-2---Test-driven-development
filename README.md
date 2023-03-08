@@ -68,12 +68,8 @@ make installed
 The game can be started by the following:
 
 ```
-python Classes/main.py
+python main.py
 ```
-
-All code is stored below the directory `Classes/`.
-
-
 
 
 ### Run the linters

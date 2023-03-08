@@ -2,7 +2,7 @@
 
 import unittest
 from unittest.mock import patch
-from Classes.game import Game
+from Game.game import Game
 
 
 class TestGame(unittest.TestCase):
@@ -64,7 +64,7 @@ class TestGame(unittest.TestCase):
 
         res = game.get_optionmenu()
         exp = '''Press 1 to change name
-Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
+Press 2 to quit game\nPress 3 to roll\nPress 4 to cheat\n'''
         self.assertEqual(res, exp)
 
     def test_get_difficulty_menu(self):
