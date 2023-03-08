@@ -3,7 +3,7 @@ Game description
 
 "Pig" is a very simple game. Two players take turns; on each turn, a player rolls a six-sided die ("die" is the singular of "dice") as many times as she wishes, or until she rolls a 1. Each number she rolls, except a 1, is added to her score this turn; but if she rolls a 1, her score for this turn is zero, and her turn ends. At the end of each turn, the score for that turn is added to the player's total score. The first player to reach or exceed 100 wins.
 
-At the start of the game the user get to decide to play one player against the computer or two players. In the one player style the difficulity level can be decided by the player, but this can not be done in two player mode. There are two difficulity levels: Easy and Hard. Cheat option exists in one player mode and in both difficulity levels, it allows your score to be increased by 20.
+At the start of the game the user get to decide to play one player against the computer or two players. In the one player style the difficulity level can be decided by the player, but this can not be done in two player mode. There are two difficulity levels: Easy and Hard. Cheat option exists in one player mode and in both difficulity levels, it allows your score to get additional 20 points.
 
 
 How to start
