@@ -1,6 +1,5 @@
-from Classes.dice import Dice
 import random
-
+from Classes.dice import Dice
 
 class DiceHand():
     def __init__(self, die) -> Dice:
