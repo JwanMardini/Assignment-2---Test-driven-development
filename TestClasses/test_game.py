@@ -3,7 +3,7 @@ from unittest.mock import patch
 from Classes.game import Game
 
 
-class test_game(unittest.TestCase):
+class TestGame(unittest.TestCase):
     def test_init_default_object(self):
         res = Game()
         exp = Game
@@ -15,7 +15,7 @@ class test_game(unittest.TestCase):
         res = game.header()
         exp = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************"
         self.assertEqual(res, exp)
-    
+
     @patch('builtins.print')
     def test_end_game(self, output):
         game = Game()
@@ -41,17 +41,17 @@ class test_game(unittest.TestCase):
         exp = 2
         self.assertEqual(res, exp)
 
-    def test_get_startMenu(self):
+    def test_get_start_menu(self):
         game = Game()
 
-        res = game.get_startMenu()
+        res = game.get_startmenu()
         exp = "Enter 1 for one player game\nEnter 2 for two players game"
         self.assertEqual(res, exp)
 
     def test_get_optionMenu(self):
         game = Game()
 
-        res = game.get_optionMenu()
+        res = game.get_optionmenu()
         exp = '''Press 1 to change name
 Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
         self.assertEqual(res, exp)
@@ -59,7 +59,7 @@ Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
     def test_get_defficultyMenu(self):
         game = Game()
 
-        res = game.get_defficultyMenu()
+        res = game.get_defficultymenu()
         exp = '''Enter (e) for easy mode and (h) for hard mode: '''
         self.assertEqual(res, exp)
     

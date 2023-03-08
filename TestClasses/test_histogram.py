@@ -3,7 +3,7 @@ from Classes.histogram import Histogram
 from Classes.dice import Dice
 
 
-class test_histogram(unittest.TestCase):
+class TestHistogram(unittest.TestCase):
     def test_init_default_object(self):
         die = Dice()
 
@@ -19,11 +19,11 @@ class test_histogram(unittest.TestCase):
         exp = list
         self.assertIsInstance(res, exp)
 
-    def test_savedData(self):
+    def test_saved_data(self):
         die = Dice()
         his = Histogram(die)
         roll = 1
-        his.savedData(roll)
+        his.saved_data(roll)
 
         self.assertIn(roll, his.get_list())
 

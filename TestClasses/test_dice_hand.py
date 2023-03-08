@@ -1,9 +1,9 @@
 import unittest
-from Classes.diceHand import DiceHand
+from Classes.dice_hand import DiceHand
 from Classes.dice import Dice
 
 
-class test_diceHand(unittest.TestCase):
+class TestDiceHand(unittest.TestCase):
     def test_init_default_object(self):
         die = Dice()
         res = DiceHand(die)

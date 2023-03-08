@@ -2,7 +2,7 @@ import unittest
 from Classes.dice import Dice
 
 
-class test_dice(unittest.TestCase):
+class TestDice(unittest.TestCase):
 
     def test_init_default_object(self):
         res = Dice()

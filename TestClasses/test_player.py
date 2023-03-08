@@ -2,13 +2,13 @@ import unittest
 from Classes.player import Player
 
 
-class test_Player(unittest.TestCase):
+class TestPlayer(unittest.TestCase):
     def test_init_default_object(self):
         player = Player("Name", 0)
         exp = Player
         self.assertIsInstance(player, exp)
 
-    def test_get_Name(self):
+    def test_get_name(self):
         exp = "Name"
         player = Player(exp, 0)
 

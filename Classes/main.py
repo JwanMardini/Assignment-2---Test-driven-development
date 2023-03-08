@@ -101,9 +101,9 @@ def twoPlayers_gameSetUp(player, player2, statics):
             print()
         input("Hit enter to continue ")
         playerTurn(player, player2, game, statics)
-    if player.get_score >= 10:
+    if player.get_score >= high_score:
         game.end_game(player.get_name(), player.get_score())
-    elif player2.get_score() >= 10:
+    elif player2.get_score() >= high_score:
         game.end_game(player2.get_name(), player2.get_score())
         
 
@@ -164,13 +164,14 @@ def CPU_gameSetUp(player, player2, statics):
             else:
                 print("Invalid input, try again.")
 
-    if player.get_score() >= 10:
+    if player.get_score() >= high_score:
         game.end_game(player.get_name(), player.get_score())
-    elif player2.get_score() >= 10:
+    elif player2.get_score() >= high_score:
         game.end_game(player2.get_name(), player2.get_score())
 
 
 def computerTurn(player_1, player_2, turn, statics):
+    highScore = HighScore().get_highScore()
     die = Dice()
     diceHand = DiceHand(die)
     roll = "y"
@@ -191,9 +192,9 @@ def computerTurn(player_1, player_2, turn, statics):
             else:
                 turnScore = turnScore + die_num
                 print("Your turn so far is ", turnScore)
-                if player_1.get_score() >= 10:
+                if player_1.get_score() >= highScore:
                     roll = "n"
-                elif player_2.get_score() >= 10:
+                elif player_2.get_score() >= highScore:
                     roll = "n"
                 else:
                     roll = input("Do you want to roll again(y/n)? ").lower()
@@ -230,8 +231,9 @@ def computerTurn(player_1, player_2, turn, statics):
 
 
 def end_game(player1, player2):
+    high_score = HighScore().get_highScore()
     game = Game()
-    winner = player1 if player1.get_score() >= 10 else player2
+    winner = player1 if player1.get_score() >= high_score else player2
     game.end_game(winner.get_name(), winner.get_score())
     
 
@@ -243,7 +245,6 @@ def showStatistics(statistics):
     for i in range(1, len(list2)):
         print()
         print(f'{i}: {"*" * list2[i]}')
-
 
 
 if __name__ == "__main__":

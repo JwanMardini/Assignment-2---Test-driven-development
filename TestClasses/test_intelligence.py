@@ -2,7 +2,7 @@ import unittest
 from Classes.intelligence import Intelligence
 
 
-class test_intelligence(unittest.TestCase):
+class TestIntelligence(unittest.TestCase):
     def test_init_default_object(self):
         res = Intelligence("e", 0)
         exp = Intelligence
