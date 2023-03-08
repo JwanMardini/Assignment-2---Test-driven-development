@@ -114,10 +114,10 @@ pdoc:
 pyreverse:
 	@$(call MESSAGE,$@)
 	install -d doc/pyreverse
-	pyreverse Classes/*.py
-	dot -Tpng classes.dot -o doc/pyreverse/classes.png
+	pyreverse -o png --ignore '*test*.py' Classes
+	dot -Tpng Classes.dot -o doc/pyreverse/Classes.png
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
-	rm -f classes.dot packages.dot
+	rm -f Classes.dot packages.dot
 
 doc: pdoc pyreverse #pydoc sphinx
 

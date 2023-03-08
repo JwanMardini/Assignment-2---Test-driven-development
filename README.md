@@ -68,7 +68,7 @@ make installed
 The game can be started by the following:
 
 ```
-python main.py
+python Classes/main.py
 ```
 
 
@@ -86,7 +86,7 @@ make lint
 
 ### Run the unittests
 
-You can run the unittests like this. The testfiles are stored in the `TestClasses/` directory.
+You can run the unittests like this:
 
 ```
 make unittest

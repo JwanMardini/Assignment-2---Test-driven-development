@@ -1,7 +1,7 @@
 """Test the Player class."""
 
 import unittest
-from Player.player import Player
+from player import Player
 
 
 class TestPlayer(unittest.TestCase):

@@ -1,7 +1,7 @@
 """Test the HighScore class."""
 
 import unittest
-from Highscore.high_score import HighScore
+from high_score import HighScore
 
 
 class TestHighScore(unittest.TestCase):
