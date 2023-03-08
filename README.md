@@ -14,7 +14,7 @@ These are the steps to get going with the game.
 ### 1. Check version of Python
 For windows
 ```
-`PYTHON=python
+PYTHON=python
 make version
 ```
 
@@ -33,6 +33,7 @@ Install a Python virtual environment.
 make venv
 ```
 Activation:
+
     For windows
     ```
     . .venv/Scripts/activate
@@ -45,6 +46,7 @@ Activation:
 
 Deactivation:
  Use the command `deactivate`.
+
 
 
 ### Install the requirements
@@ -60,6 +62,7 @@ To check the installation
 make installed
 ```
 
+
 ### Run the code
 
 The game can be started by the following:
@@ -69,6 +72,7 @@ python Classes/main.py
 ```
 
 All code is stored below the directory `Classes/`.
+
 
 
 
