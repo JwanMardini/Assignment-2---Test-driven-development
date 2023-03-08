@@ -1,11 +1,11 @@
-from game import Game
-from player import Player
-from intelligence import Intelligence
-from dice import Dice
-from diceHand import DiceHand
-from highScore import HighScore
-from histogram import Histogram
 import time
+from Classes.game import Game
+from Classes.player import Player
+from Classes.intelligence import Intelligence
+from Classes.dice import Dice
+from Classes.dice_hand import DiceHand
+from Classes.high_score import HighScore
+from Classes.histogram import Histogram
 
 
 def main():
@@ -13,53 +13,52 @@ def main():
     statistics = Histogram(die)
     game = Game()
     choice_controller = True
-    while (choice_controller):
+    while choice_controller:
         print(game.header())
         print()
         print(game.get_rules())
         print()
-        print(game.get_startMenu())
+        print(game.get_startmenu())
         try:
             choice = int(input("-> "))
             if choice == 2:
                 print()
                 play = "y"
-                while (play == "y"):
-                    twoPlayers(statistics)
+                while play == "y":
+                    two_players(statistics)
                     play = input("Do you want to play again(y/n)").lower()
                 print("Goodbye")
             elif choice == 1:
                 play = "y"
-                while (play == "y"):
+                while play == "y":
                     difficulty_mode(statistics)
                     play = input("Enter y to play again and s to show statics: ").lower()
                     if play == "s":
-                        showStatistics(statistics)
+                        show_statistics(statistics)
                         quit()
-                    
                 print("Goodbye")
         except ValueError:
             print("Invalid input, try again.")
             print()
-            print(game.get_startMenu())
+            print(game.get_startmenu())
 
 
-def twoPlayers(statics):
+def two_players(statics):
     name = input("Enter the first player name: ")
     name2 = input("Enter the seconde player name: ")
     player = Player(name, 0)
     player2 = Player(name2, 0)
-    twoPlayers_gameSetUp(player, player2, statics)
+    twoplayers_gamesetup(player, player2, statics)
 
 
-def playerTurn(player_1, player_2, turn, statics):
+def player_turn(player_1, player_2, turn, statics):
     die = Dice()
-    diceHand = DiceHand(die)
+    dice_hand = DiceHand(die)
     roll = "y"
-    turnScore = 0
-    while (roll == "y"):
-        die_num = diceHand.roll()
-        statics.savedData(roll)
+    turn_score = 0
+    while roll == "y":
+        die_num = dice_hand.roll()
+        statics.saved_data(roll)
         print("You rolled a ", die_num)
         print()
         if die_num == 1:
@@ -67,28 +66,28 @@ def playerTurn(player_1, player_2, turn, statics):
             print("Your turn is over")
             print()
             roll = "n"
-            turnScore = 0
+            turn_score = 0
         else:
-            turnScore = turnScore + die_num
-            print("Your turn so far is ", turnScore)
+            turn_score = turn_score + die_num
+            print("Your turn so far is ", turn_score)
             roll = input("Do you want to roll again(y/n)? ").lower()
     if turn.get_turn() == 1:
         turn.set_turn(2)
-        if turnScore == 0:
+        if turn_score == 0:
             player_1.set_score(0)
         else:
-            player_1.set_score(player_1.get_score() + turnScore)
+            player_1.set_score(player_1.get_score() + turn_score)
     elif turn.get_turn() == 2:
         turn.set_turn(1)
-        if turnScore == 0:
+        if turn_score == 0:
             player_2.set_score(0)
         else:
-            player_2.set_score(player_2.get_score() + turnScore)
+            player_2.set_score(player_2.get_score() + turn_score)
 
 
-def twoPlayers_gameSetUp(player, player2, statics):
+def twoplayers_gamesetup(player, player2, statics):
     game = Game()
-    high_score = HighScore().get_highScore()
+    high_score = HighScore().get_high_score()
     while (player.get_score() <= high_score or player2.get_score() <= high_score):
         print(f"{player.get_name()} score: {player.get_score()}")
         print(f"{player2.get_name()} score: {player2.get_score()}")
@@ -100,20 +99,20 @@ def twoPlayers_gameSetUp(player, player2, statics):
             print("it is " + player2.get_name() + " turn")
             print()
         input("Hit enter to continue ")
-        playerTurn(player, player2, game, statics)
-    if player.get_score >= high_score:
+        player_turn(player, player2, game, statics)
+    if player.get_score >= 10:
         game.end_game(player.get_name(), player.get_score())
     elif player2.get_score() >= high_score:
         game.end_game(player2.get_name(), player2.get_score())
-        
+
 
 def difficulty_mode(statics):
-    game = Game().get_defficultyMenu()
+    game = Game().get_difficultymenu()
     name = input("Enter your name: ")
     player = Player(name, 0)
     computer = Intelligence(-20, 20)
     choice_controller = True
-    while (choice_controller):
+    while choice_controller:
         try:
             print(game)
             mode = str(input("-> ").lower())
@@ -126,13 +125,12 @@ def difficulty_mode(statics):
         except TypeError:
             print("Invalid input, try again.")
             print()
-    CPU_gameSetUp(player, computer, statics)
-    
+    cpu_gamesetup(player, computer, statics)
 
 
-def CPU_gameSetUp(player, player2, statics):
+def cpu_gamesetup(player, player2, statics):
     game = Game()
-    high_score = HighScore().get_highScore()
+    high_score = HighScore().get_high_score()
     while (player.get_score() < high_score and player2.get_score() < high_score):
         print(f"{player.get_name()} score: {player.get_score()}")
         print(f"{player2.get_name()} score: {player2.get_score()}")
@@ -144,9 +142,9 @@ def CPU_gameSetUp(player, player2, statics):
             print("it is " + player2.get_name() + " turn")
             print()
         print()
-        print(game.get_optionMenu())
+        print(game.get_optionmenu())
         controller = True
-        while (controller):
+        while controller:
             choice = input("-> ")
             if choice == "1":
                 controller = False
@@ -157,7 +155,7 @@ def CPU_gameSetUp(player, player2, statics):
                 exit()
             elif choice == "3":
                 controller = False
-                computerTurn(player, player2, game, statics)
+                computer_turn(player, player2, game, statics)
             elif choice == "4":
                 player.set_score(player.get_score() + 20)
                 controller = False
@@ -170,17 +168,16 @@ def CPU_gameSetUp(player, player2, statics):
         game.end_game(player2.get_name(), player2.get_score())
 
 
-def computerTurn(player_1, player_2, turn, statics):
-    highScore = HighScore().get_highScore()
+def computer_turn(player_1, player_2, turn, statics):
     die = Dice()
-    diceHand = DiceHand(die)
+    dice_hand = DiceHand(die)
     roll = "y"
-    turnScore = 0
+    turn_score = 0
     die_num = 0
     if turn.get_turn() == 1:
-        while (roll == "y"):
-            die_num = diceHand.roll()
-            statics.savedData(die_num)
+        while roll == "y":
+            die_num = dice_hand.roll()
+            statics.saved_data(die_num)
             print("You rolled a ", die_num)
             print()
             if die_num == 1:
@@ -188,11 +185,11 @@ def computerTurn(player_1, player_2, turn, statics):
                 print("Your turn is over")
                 print()
                 roll = "n"
-                turnScore = 0
+                turn_score = 0
             else:
-                turnScore = turnScore + die_num
-                print("Your turn so far is ", turnScore)
-                if player_1.get_score() >= highScore:
+                turn_score = turn_score + die_num
+                print("Your turn so far is ", turn_score)
+                if player_1.get_score() >= 10:
                     roll = "n"
                 elif player_2.get_score() >= highScore:
                     roll = "n"
@@ -200,14 +197,14 @@ def computerTurn(player_1, player_2, turn, statics):
                     roll = input("Do you want to roll again(y/n)? ").lower()
     else:
         cpu_die = 0
-        while (cpu_die != 1):
-            cpu_die = diceHand.roll()
-            statics.savedData(cpu_die)
+        while cpu_die != 1:
+            cpu_die = dice_hand.roll()
+            statics.saved_data(cpu_die)
             print(player_2.get_name(), " rolled ", cpu_die)
             time.sleep(2)
             print()
-            turnScore = turnScore + cpu_die
-            if turnScore > 10 and turnScore < 20:
+            turn_score = turn_score + cpu_die
+            if turn_score > 10 and turn_score < 20:
                 print(player_2.get_name(), " choosed to hold")
                 print()
                 break
@@ -218,16 +215,16 @@ def computerTurn(player_1, player_2, turn, statics):
 
     if turn.get_turn() == 1:
         turn.set_turn(2)
-        if turnScore == 0:
+        if turn_score == 0:
             player_1.set_score(0)
         else:
-            player_1.set_score(player_1.get_score() + turnScore)
+            player_1.set_score(player_1.get_score() + turn_score)
     elif turn.get_turn() == 2:
         turn.set_turn(1)
         if cpu_die == 1:
             player_2.set_score(player_2.get_mode())
         else:
-            player_2.set_score(player_2.get_score() + turnScore)
+            player_2.set_score(player_2.get_score() + turn_score)
 
 
 def end_game(player1, player2):
@@ -235,9 +232,9 @@ def end_game(player1, player2):
     game = Game()
     winner = player1 if player1.get_score() >= high_score else player2
     game.end_game(winner.get_name(), winner.get_score())
-    
 
-def showStatistics(statistics):
+
+def show_statistics(statistics):
     my_list = statistics.get_list()
     list2 = [0] * 7
     for score in my_list:

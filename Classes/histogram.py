@@ -3,7 +3,7 @@ class Histogram:
         self._die = die
         self._list = []
 
-    def savedData(self, roll):
+    def saved_data(self, roll):
         self._list.append(roll)
 
     def get_list(self):
