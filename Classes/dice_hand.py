@@ -1,13 +1,13 @@
-"""A class that represents dice.  """
+"""A class that represents die. """
 import random
 from Classes.dice import Dice
 
 
 class DiceHand():
-    """ Methods are created with different functions. An instance of dice from Dice class is the attribute. """
+    """ Methods are created with different functions. An instance of die is created.. """
 
     def __init__(self, die) -> Dice:
-        """Initiliazing the object. An instance of Dice is created."""
+        """Initiliazing the instance. An instance of DiceHand is created."""
         self.die = die
 
     def roll(self):

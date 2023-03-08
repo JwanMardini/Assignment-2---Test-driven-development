@@ -3,8 +3,9 @@
 
 class Histogram:
     """Methods for storing the number of rolls."""
+
     def __init__(self, die) -> None:
-        """init the die instance of Histogram Class."""
+        """Init the die instance of Histogram Class."""
         self._die = die
         self._list = []
 

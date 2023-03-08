@@ -3,8 +3,9 @@
 
 class HighScore:
     """The class has methods dealing with high score."""
+
     def __init__(self) -> None:
-        """"initializing an instance of High score class."""
+        """"Initializing an instance of High score class."""
         self._high_score = 100
 
     def set_high_score(self, new_high_score):

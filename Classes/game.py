@@ -3,8 +3,9 @@
 
 class Game:
     """Methods used for layouts and rules."""
+
     def __init__(self):
-        """init by creating instances of Game class. """
+        """Init by creating instances of Game class. """
         self._header = "***************************\n" + "--- Welcome to pig dice ---\n" + "***************************"
         self._turn = 1
         self._start_menu = "Enter 1 for one player game\nEnter 2 for two players game"

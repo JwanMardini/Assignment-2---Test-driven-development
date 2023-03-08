@@ -3,6 +3,7 @@
 
 class Player:
     """The methods and attribute of the player."""
+
     def __init__(self, name, score):
         """Init of the name and score of the player."""
         self._name = name

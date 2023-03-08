@@ -5,7 +5,7 @@ class Dice:
     """Method for the die are created."""
 
     def __init__(self) -> None:
-        """initializing the attribute of the die."""
+        """Initializing the attribute of the die."""
         self.__faces = 6
 
     def get_faces(self):
