@@ -1,10 +1,15 @@
+"""Test the DiceHand class."""
+
 import unittest
 from Classes.dice_hand import DiceHand
 from Classes.dice import Dice
 
 
 class TestDiceHand(unittest.TestCase):
+    """Test class."""
+
     def test_init_default_object(self):
+        """Instantiate an object and check its properties."""
         die = Dice()
         res = DiceHand(die)
         exp = DiceHand
@@ -12,6 +17,7 @@ class TestDiceHand(unittest.TestCase):
         self.assertIsInstance(res, exp)
 
     def test_roll(self):
+        """Test the roll method."""
         die = Dice()
         obj = DiceHand(die)
 

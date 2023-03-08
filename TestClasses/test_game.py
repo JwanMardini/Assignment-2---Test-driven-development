@@ -1,15 +1,21 @@
+"""Test the game class."""
+
 import unittest
 from unittest.mock import patch
 from Classes.game import Game
 
 
 class TestGame(unittest.TestCase):
+    """Test class."""
+
     def test_init_default_object(self):
+        """Instantiate an object and check its properties."""
         res = Game()
         exp = Game
         self.assertIsInstance(res, exp)
 
     def test_header(self):
+        """Test the header menu."""
         game = Game()
 
         res = game.header()
@@ -18,15 +24,17 @@ class TestGame(unittest.TestCase):
 
     @patch('builtins.print')
     def test_end_game(self, output):
+        """Test the end game output."""
         game = Game()
         name = "Name"
-        highScore = 150
+        high_score = 150
 
-        game.end_game(name, highScore)
-        exp = f"The winner is {name}, and your score is {highScore}"
+        game.end_game(name, high_score)
+        exp = f"The winner is {name}, and your score is {high_score}"
         output.assert_called_with(exp)
 
     def test_get_turn(self):
+        """Test weather the turn is one or two."""
         game = Game()
 
         res = game.get_turn()
@@ -34,6 +42,7 @@ class TestGame(unittest.TestCase):
         self.assertEqual(res, exp)
 
     def test_set_turn(self):
+        """Test set_turn method."""
         game = Game()
         game.set_turn(2)
 
@@ -42,13 +51,15 @@ class TestGame(unittest.TestCase):
         self.assertEqual(res, exp)
 
     def test_get_start_menu(self):
+        """Test the start menu."""
         game = Game()
 
         res = game.get_startmenu()
         exp = "Enter 1 for one player game\nEnter 2 for two players game"
         self.assertEqual(res, exp)
 
-    def test_get_optionMenu(self):
+    def test_get_option_menu(self):
+        """Test the option menu."""
         game = Game()
 
         res = game.get_optionmenu()
@@ -56,14 +67,16 @@ class TestGame(unittest.TestCase):
 Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
         self.assertEqual(res, exp)
 
-    def test_get_defficultyMenu(self):
+    def test_get_difficulty_menu(self):
+        """Test difficulty menu."""
         game = Game()
 
-        res = game.get_defficultymenu()
+        res = game.get_difficultymenu()
         exp = '''Enter (e) for easy mode and (h) for hard mode: '''
         self.assertEqual(res, exp)
-    
+
     def test_get_rules(self):
+        """Test get_rules method."""
         game = Game()
 
         res = game.get_rules()

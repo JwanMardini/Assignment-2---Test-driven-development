@@ -18,3 +18,5 @@
 #ignore-patterns=*_test.py
 
 init-hook='import sys; sys.path.append(".")'
+
+max-line-length=1000
