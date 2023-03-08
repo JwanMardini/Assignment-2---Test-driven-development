@@ -59,7 +59,7 @@ Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
     def test_get_defficultyMenu(self):
         game = Game()
 
-        res = game.get_defficultymenu()
+        res = game.get_difficultymenu()
         exp = '''Enter (e) for easy mode and (h) for hard mode: '''
         self.assertEqual(res, exp)
     
