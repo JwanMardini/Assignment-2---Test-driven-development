@@ -1,3 +1,4 @@
+"""The main program to run the game pig dice."""
 import time
 from Classes.game import Game
 from Classes.player import Player
@@ -9,6 +10,7 @@ from Classes.histogram import Histogram
 
 
 def main():
+    """The main method."""
     die = Dice()
     statistics = Histogram(die)
     game = Game()
@@ -44,6 +46,7 @@ def main():
 
 
 def two_players(statics):
+    """Name input of players and calling the game setup."""
     name = input("Enter the first player name: ")
     name2 = input("Enter the seconde player name: ")
     player = Player(name, 0)
@@ -52,6 +55,7 @@ def two_players(statics):
 
 
 def player_turn(player_1, player_2, turn, statics):
+    """Each player takes turn and score is stored."""
     die = Dice()
     dice_hand = DiceHand(die)
     roll = "y"
@@ -86,6 +90,7 @@ def player_turn(player_1, player_2, turn, statics):
 
 
 def twoplayers_gamesetup(player, player2, statics):
+    """The two players game setup."""
     game = Game()
     high_score = HighScore().get_high_score()
     while (player.get_score() <= high_score or player2.get_score() <= high_score):
@@ -100,13 +105,14 @@ def twoplayers_gamesetup(player, player2, statics):
             print()
         input("Hit enter to continue ")
         player_turn(player, player2, game, statics)
-    if player.get_score >= 10:
+    if player.get_score >= high_score:
         game.end_game(player.get_name(), player.get_score())
     elif player2.get_score() >= high_score:
         game.end_game(player2.get_name(), player2.get_score())
 
 
 def difficulty_mode(statics):
+    """Optional difficulty mode of game."""
     game = Game().get_difficultymenu()
     name = input("Enter your name: ")
     player = Player(name, 0)
@@ -129,6 +135,7 @@ def difficulty_mode(statics):
 
 
 def cpu_gamesetup(player, player2, statics):
+    """One player vs CPU game setup."""
     game = Game()
     high_score = HighScore().get_high_score()
     while (player.get_score() < high_score and player2.get_score() < high_score):
@@ -169,6 +176,8 @@ def cpu_gamesetup(player, player2, statics):
 
 
 def computer_turn(player_1, player_2, turn, statics):
+    """CPU vs player score stored."""
+    high_score = HighScore().get_high_score()
     die = Dice()
     dice_hand = DiceHand(die)
     roll = "y"
@@ -189,9 +198,9 @@ def computer_turn(player_1, player_2, turn, statics):
             else:
                 turn_score = turn_score + die_num
                 print("Your turn so far is ", turn_score)
-                if player_1.get_score() >= 10:
+                if player_1.get_score() >= high_score:
                     roll = "n"
-                elif player_2.get_score() >= highScore:
+                elif player_2.get_score() >= high_score:
                     roll = "n"
                 else:
                     roll = input("Do you want to roll again(y/n)? ").lower()
@@ -228,13 +237,15 @@ def computer_turn(player_1, player_2, turn, statics):
 
 
 def end_game(player1, player2):
-    high_score = HighScore().get_highScore()
+    """Announce the winner."""
+    high_score = HighScore().get_high_score()
     game = Game()
     winner = player1 if player1.get_score() >= high_score else player2
     game.end_game(winner.get_name(), winner.get_score())
 
 
 def show_statistics(statistics):
+    """Statistics of die roll."""
     my_list = statistics.get_list()
     list2 = [0] * 7
     for score in my_list:
