@@ -10,7 +10,7 @@ from Classes.histogram import Histogram
 
 
 def main():
-    """The main method."""
+    """Start of the game."""
     die = Dice()
     statistics = Histogram(die)
     game = Game()
@@ -90,7 +90,7 @@ def player_turn(player_1, player_2, turn, statics):
 
 
 def twoplayers_gamesetup(player, player2, statics):
-    """The two players game setup."""
+    """Two players game setup."""
     game = Game()
     high_score = HighScore().get_high_score()
     while (player.get_score() <= high_score or player2.get_score() <= high_score):
@@ -112,7 +112,7 @@ def twoplayers_gamesetup(player, player2, statics):
 
 
 def difficulty_mode(statics):
-    """Optional difficulty mode of game."""
+    """Difficulty mode of game."""
     game = Game().get_difficultymenu()
     name = input("Enter your name: ")
     player = Player(name, 0)

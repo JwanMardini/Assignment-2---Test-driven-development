@@ -11,13 +11,13 @@ class Intelligence(Player):
         self._mode = mode
 
     def get_mode(self):
-        """The mode instance is returned."""
+        """Mode instance is returned."""
         return self._mode
 
     def set_score(self, new_score):
-        """The score for the CPU player is set."""
+        """Score for the CPU player is set."""
         self._score = new_score
 
     def get_score(self):
-        """The score for the CPU player is returned."""
+        """Score for the CPU player is returned."""
         return self._score

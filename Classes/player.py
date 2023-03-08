@@ -10,17 +10,17 @@ class Player:
         self._score = score
 
     def set_name(self, name):
-        """The name of the player is set."""
+        """Name of the player is set."""
         self._name = name
 
     def get_name(self):
-        """The name of the player is returned."""
+        """Name of the player is returned."""
         return self._name
 
     def set_score(self, new_score):
-        """The score of the player is set."""
+        """Score of the player is set."""
         self._score = new_score
 
     def get_score(self):
-        """The score of the player is returned."""
+        """Score of the player is returned."""
         return self._score
