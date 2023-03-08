@@ -10,7 +10,7 @@ class Game:
         self._turn = 1
         self._start_menu = "Enter 1 for one player game\nEnter 2 for two players game"
         self._option_menu = '''Press 1 to change name
-Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n'''
+Press 2 to quit game\nPress 3 to roll\nPress 4 to cheat\n'''
         self._difficulty_menu = '''Enter (e) for easy mode and (h) for hard mode: '''
 
     def header(self):

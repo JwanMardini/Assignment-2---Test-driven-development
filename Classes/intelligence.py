@@ -1,5 +1,5 @@
 """The intelligence class represents the CPU as a player. The class is inherited from Player class."""
-from Classes.player import Player
+from player import Player
 
 
 class Intelligence(Player):

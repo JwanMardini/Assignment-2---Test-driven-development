@@ -1,12 +1,11 @@
 """A class that represents die."""
 import random
-from Classes.dice import Dice
 
 
 class DiceHand():
     """Methods are created with different functions. An instance of die is created."""
 
-    def __init__(self, die) -> Dice:
+    def __init__(self, die):
         """Initiliazing the instance. An instance of DiceHand is created."""
         self.die = die
 
