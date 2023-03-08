@@ -1,5 +1,5 @@
 import unittest
-from Classes.diceHand import DiceHand
+from Classes.dice_hand import DiceHand
 from Classes.dice import Dice
 
 

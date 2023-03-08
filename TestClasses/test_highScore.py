@@ -1,5 +1,5 @@
 import unittest
-from Classes.highScore import HighScore
+from Classes.high_score import HighScore
 
 
 class test_HighScore(unittest.TestCase):
