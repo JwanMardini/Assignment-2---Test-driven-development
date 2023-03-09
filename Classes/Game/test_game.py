@@ -2,7 +2,7 @@
 
 import unittest
 from unittest.mock import patch
-from game import Game
+from classes.game.game import Game
 
 
 class TestGame(unittest.TestCase):

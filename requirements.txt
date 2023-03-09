@@ -12,6 +12,7 @@ radon
 black
 
 # Documentation
+graphviz
 pdoc3
 sphinx
 
