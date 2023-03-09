@@ -1,7 +1,7 @@
 """Test the Intelligence class."""
 
 import unittest
-from classes.intelligence.intelligence import Intelligence
+from classes.Intelligence.intelligence import Intelligence
 
 
 class TestIntelligence(unittest.TestCase):

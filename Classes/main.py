@@ -1,12 +1,17 @@
 """The main program to run the game pig dice."""
 import time
-from classes.dice.dice import Dice
-from classes.dice_hand.dice_hand import DiceHand
-from classes.game.game import Game
-from classes.high_score.high_score import HighScore
-from classes.histogram.histogram import Histogram
-from classes.intelligence.intelligence import Intelligence
-from classes.player.player import Player
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from Dice.dice import Dice
+from Dice_hand.dice_hand import DiceHand
+from Game.game import Game
+from High_score.high_score import HighScore
+from Histogram.histogram import Histogram
+from Intelligence.intelligence import Intelligence
+from Player.player import Player
 
 
 def main():
@@ -21,6 +26,8 @@ def main():
         print(game.get_rules())
         print()
         print(game.get_startmenu())
+        print()
+        print("Enter 3 to exit")
         try:
             choice = int(input("-> "))
             if choice == 2:
@@ -39,6 +46,8 @@ def main():
                         show_statistics(statistics)
                         quit()
                 print("Goodbye")
+            elif choice == 3:
+                quit()
         except ValueError:
             print("Invalid input, try again.")
             print()

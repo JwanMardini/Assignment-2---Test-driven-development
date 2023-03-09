@@ -1,8 +1,8 @@
 """Test the DiceHand class."""
 
 import unittest
-from classes.dice_hand.dice_hand import DiceHand
-from classes.dice.dice import Dice
+from classes.Dice_hand.dice_hand import DiceHand
+from classes.Dice.dice import Dice
 
 
 class TestDiceHand(unittest.TestCase):

@@ -1,4 +1,8 @@
 """The class game shows the layout of the game and represents the rules of the game."""
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 class Game:

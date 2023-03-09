@@ -1,5 +1,10 @@
 """The intelligence class represents the CPU as a player. The class is inherited from Player class."""
-from classes.player.player import Player
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from Player.player import Player
 
 
 class Intelligence(Player):

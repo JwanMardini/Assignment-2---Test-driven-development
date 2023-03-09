@@ -1,4 +1,8 @@
 """The histogram plots the rolled die face and how many times that number reaccurs."""
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 class Histogram:

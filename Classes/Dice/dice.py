@@ -1,4 +1,8 @@
 """The class shows the attribute of the die itself."""
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 class Dice:

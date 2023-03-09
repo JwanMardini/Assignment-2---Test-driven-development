@@ -29,13 +29,18 @@
 </summary>
 <pre><code class="python">&#34;&#34;&#34;The main program to run the game pig dice.&#34;&#34;&#34;
 import time
-from Classes.game import Game
-from Classes.player import Player
-from Classes.intelligence import Intelligence
-from Classes.dice import Dice
-from Classes.dice_hand import DiceHand
-from Classes.high_score import HighScore
-from Classes.histogram import Histogram
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), &#34;..&#34;)))
+
+from Dice.dice import Dice
+from Dice_hand.dice_hand import DiceHand
+from Game.game import Game
+from High_score.high_score import HighScore
+from Histogram.histogram import Histogram
+from Intelligence.intelligence import Intelligence
+from Player.player import Player
 
 
 def main():
@@ -50,6 +55,8 @@ def main():
         print(game.get_rules())
         print()
         print(game.get_startmenu())
+        print()
+        print(&#34;Enter 3 to exit&#34;)
         try:
             choice = int(input(&#34;-&gt; &#34;))
             if choice == 2:
@@ -68,6 +75,8 @@ def main():
                         show_statistics(statistics)
                         quit()
                 print(&#34;Goodbye&#34;)
+            elif choice == 3:
+                quit()
         except ValueError:
             print(&#34;Invalid input, try again.&#34;)
             print()
@@ -485,6 +494,8 @@ if __name__ == &#34;__main__&#34;:
         print(game.get_rules())
         print()
         print(game.get_startmenu())
+        print()
+        print(&#34;Enter 3 to exit&#34;)
         try:
             choice = int(input(&#34;-&gt; &#34;))
             if choice == 2:
@@ -503,6 +514,8 @@ if __name__ == &#34;__main__&#34;:
                         show_statistics(statistics)
                         quit()
                 print(&#34;Goodbye&#34;)
+            elif choice == 3:
+                quit()
         except ValueError:
             print(&#34;Invalid input, try again.&#34;)
             print()
