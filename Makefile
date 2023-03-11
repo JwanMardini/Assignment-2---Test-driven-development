@@ -62,7 +62,7 @@ clean-all: clean clean-doc
 #
 pylint:
 	@$(call MESSAGE,$@)
-	-cd Classes && $(PYTHON) -m pylint *.py
+	-cd game_classes && $(PYTHON) -m pylint *.py
 
 flake8:
 	@$(call MESSAGE,$@)
@@ -104,7 +104,7 @@ test: lint coverage
 pydoc:
 	@$(call MESSAGE,$@)
 	install -d doc/pydoc
-	$(PYTHON) -m pydoc -w Classes/*.py
+	$(PYTHON) -m pydoc -w game_classes/*.py
 	mv *.html doc/pydoc
 
 pdoc:
@@ -114,10 +114,10 @@ pdoc:
 pyreverse:
 	@$(call MESSAGE,$@)
 	install -d doc/pyreverse
-	pyreverse -o png --ignore '*test*.py' classes
-	dot -Tpng classes.dot -o doc/pyreverse/classes.png
+	pyreverse -o png --ignore '*test*.py' game_classes
+	dot -Tpng classes.dot -o doc/pyreverse/game_classes.png
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
-	rm -f classes.dot packages.dot
+	rm -f game_classes.dot packages.dot
 
 doc: pdoc pyreverse #pydoc sphinx
 
