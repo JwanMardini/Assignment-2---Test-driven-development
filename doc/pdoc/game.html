@@ -28,6 +28,10 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;The class game shows the layout of the game and represents the rules of the game.&#34;&#34;&#34;
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), &#34;..&#34;)))
 
 
 class Game:
@@ -39,7 +43,7 @@ class Game:
         self._turn = 1
         self._start_menu = &#34;Enter 1 for one player game\nEnter 2 for two players game&#34;
         self._option_menu = &#39;&#39;&#39;Press 1 to change name
-Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n&#39;&#39;&#39;
+Press 2 to quit game\nPress 3 to roll\nPress 4 to cheat\n&#39;&#39;&#39;
         self._difficulty_menu = &#39;&#39;&#39;Enter (e) for easy mode and (h) for hard mode: &#39;&#39;&#39;
 
     def header(self):
@@ -107,7 +111,7 @@ Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n&#39;&#39;&#39;
         self._turn = 1
         self._start_menu = &#34;Enter 1 for one player game\nEnter 2 for two players game&#34;
         self._option_menu = &#39;&#39;&#39;Press 1 to change name
-Press 2 to quit game\nPress 3 to roll\n Press 4 to cheat\n&#39;&#39;&#39;
+Press 2 to quit game\nPress 3 to roll\nPress 4 to cheat\n&#39;&#39;&#39;
         self._difficulty_menu = &#39;&#39;&#39;Enter (e) for easy mode and (h) for hard mode: &#39;&#39;&#39;
 
     def header(self):

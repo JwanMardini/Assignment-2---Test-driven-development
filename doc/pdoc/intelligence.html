@@ -28,7 +28,12 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;The intelligence class represents the CPU as a player. The class is inherited from Player class.&#34;&#34;&#34;
-from Classes.player import Player
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), &#34;..&#34;)))
+
+from Player.player import Player
 
 
 class Intelligence(Player):
@@ -94,7 +99,7 @@ class Intelligence(Player):
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
-<li>Classes.player.Player</li>
+<li>Player.player.Player</li>
 </ul>
 <h3>Methods</h3>
 <dl>

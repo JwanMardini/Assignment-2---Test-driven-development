@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>histogram API documentation</title>
-<meta name="description" content="The histogram plots the rolled die face and how many times that number reaccurs." />
+<title>test_high_score API documentation</title>
+<meta name="description" content="Test the HighScore class." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,36 +19,49 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>histogram</code></h1>
+<h1 class="title">Module <code>test_high_score</code></h1>
 </header>
 <section id="section-intro">
-<p>The histogram plots the rolled die face and how many times that number reaccurs.</p>
+<p>Test the HighScore class.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">&#34;&#34;&#34;The histogram plots the rolled die face and how many times that number reaccurs.&#34;&#34;&#34;
-import os
-import sys
+<pre><code class="python">&#34;&#34;&#34;Test the HighScore class.&#34;&#34;&#34;
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), &#34;..&#34;)))
+import unittest
+from game_classes.High_score.high_score import HighScore
 
 
-class Histogram:
-    &#34;&#34;&#34;Methods for storing the number of rolls.&#34;&#34;&#34;
+class TestHighScore(unittest.TestCase):
+    &#34;&#34;&#34;Test class.&#34;&#34;&#34;
 
-    def __init__(self, die) -&gt; None:
-        &#34;&#34;&#34;Init the die instance of Histogram Class.&#34;&#34;&#34;
-        self._die = die
-        self._list = []
+    def test_init_default_object(self):
+        &#34;&#34;&#34;Instantiate an object and check its properties.&#34;&#34;&#34;
+        res = HighScore()
+        exp = HighScore
+        self.assertIsInstance(res, exp)
 
-    def saved_data(self, roll):
-        &#34;&#34;&#34;Append the roll data to a list.&#34;&#34;&#34;
-        self._list.append(roll)
+    def test_get_high_score(self):
+        &#34;&#34;&#34;Test get_high_score method.&#34;&#34;&#34;
+        obj = HighScore()
 
-    def get_list(self):
-        &#34;&#34;&#34;List is returned.&#34;&#34;&#34;
-        return self._list</code></pre>
+        res = obj.get_high_score()
+        exp = 100
+        self.assertEqual(res, exp)
+
+    def test_set_high_score(self):
+        &#34;&#34;&#34;Test set_high_score method.&#34;&#34;&#34;
+        obj = HighScore()
+        obj.set_high_score(200)
+
+        res = obj.get_high_score()
+        exp = 200
+        self.assertEqual(res, exp)
+
+
+if __name__ == &#34;__main__&#34;:
+    unittest.main()</code></pre>
 </details>
 </section>
 <section>
@@ -60,61 +73,102 @@ class Histogram:
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="histogram.Histogram"><code class="flex name class">
-<span>class <span class="ident">Histogram</span></span>
-<span>(</span><span>die)</span>
+<dt id="test_high_score.TestHighScore"><code class="flex name class">
+<span>class <span class="ident">TestHighScore</span></span>
+<span>(</span><span>methodName='runTest')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Methods for storing the number of rolls.</p>
-<p>Init the die instance of Histogram Class.</p></div>
+<div class="desc"><p>Test class.</p>
+<p>Create an instance of the class that will use the named test
+method when executed. Raises a ValueError if the instance does
+not have a method with the specified name.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class Histogram:
-    &#34;&#34;&#34;Methods for storing the number of rolls.&#34;&#34;&#34;
+<pre><code class="python">class TestHighScore(unittest.TestCase):
+    &#34;&#34;&#34;Test class.&#34;&#34;&#34;
 
-    def __init__(self, die) -&gt; None:
-        &#34;&#34;&#34;Init the die instance of Histogram Class.&#34;&#34;&#34;
-        self._die = die
-        self._list = []
+    def test_init_default_object(self):
+        &#34;&#34;&#34;Instantiate an object and check its properties.&#34;&#34;&#34;
+        res = HighScore()
+        exp = HighScore
+        self.assertIsInstance(res, exp)
 
-    def saved_data(self, roll):
-        &#34;&#34;&#34;Append the roll data to a list.&#34;&#34;&#34;
-        self._list.append(roll)
+    def test_get_high_score(self):
+        &#34;&#34;&#34;Test get_high_score method.&#34;&#34;&#34;
+        obj = HighScore()
 
-    def get_list(self):
-        &#34;&#34;&#34;List is returned.&#34;&#34;&#34;
-        return self._list</code></pre>
+        res = obj.get_high_score()
+        exp = 100
+        self.assertEqual(res, exp)
+
+    def test_set_high_score(self):
+        &#34;&#34;&#34;Test set_high_score method.&#34;&#34;&#34;
+        obj = HighScore()
+        obj.set_high_score(200)
+
+        res = obj.get_high_score()
+        exp = 200
+        self.assertEqual(res, exp)</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>unittest.case.TestCase</li>
+</ul>
 <h3>Methods</h3>
 <dl>
-<dt id="histogram.Histogram.get_list"><code class="name flex">
-<span>def <span class="ident">get_list</span></span>(<span>self)</span>
+<dt id="test_high_score.TestHighScore.test_get_high_score"><code class="name flex">
+<span>def <span class="ident">test_get_high_score</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>List is returned.</p></div>
+<div class="desc"><p>Test get_high_score method.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_list(self):
-    &#34;&#34;&#34;List is returned.&#34;&#34;&#34;
-    return self._list</code></pre>
+<pre><code class="python">def test_get_high_score(self):
+    &#34;&#34;&#34;Test get_high_score method.&#34;&#34;&#34;
+    obj = HighScore()
+
+    res = obj.get_high_score()
+    exp = 100
+    self.assertEqual(res, exp)</code></pre>
 </details>
 </dd>
-<dt id="histogram.Histogram.saved_data"><code class="name flex">
-<span>def <span class="ident">saved_data</span></span>(<span>self, roll)</span>
+<dt id="test_high_score.TestHighScore.test_init_default_object"><code class="name flex">
+<span>def <span class="ident">test_init_default_object</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Append the roll data to a list.</p></div>
+<div class="desc"><p>Instantiate an object and check its properties.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def saved_data(self, roll):
-    &#34;&#34;&#34;Append the roll data to a list.&#34;&#34;&#34;
-    self._list.append(roll)</code></pre>
+<pre><code class="python">def test_init_default_object(self):
+    &#34;&#34;&#34;Instantiate an object and check its properties.&#34;&#34;&#34;
+    res = HighScore()
+    exp = HighScore
+    self.assertIsInstance(res, exp)</code></pre>
+</details>
+</dd>
+<dt id="test_high_score.TestHighScore.test_set_high_score"><code class="name flex">
+<span>def <span class="ident">test_set_high_score</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test set_high_score method.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_set_high_score(self):
+    &#34;&#34;&#34;Test set_high_score method.&#34;&#34;&#34;
+    obj = HighScore()
+    obj.set_high_score(200)
+
+    res = obj.get_high_score()
+    exp = 200
+    self.assertEqual(res, exp)</code></pre>
 </details>
 </dd>
 </dl>
@@ -131,10 +185,11 @@ class Histogram:
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="histogram.Histogram" href="#histogram.Histogram">Histogram</a></code></h4>
+<h4><code><a title="test_high_score.TestHighScore" href="#test_high_score.TestHighScore">TestHighScore</a></code></h4>
 <ul class="">
-<li><code><a title="histogram.Histogram.get_list" href="#histogram.Histogram.get_list">get_list</a></code></li>
-<li><code><a title="histogram.Histogram.saved_data" href="#histogram.Histogram.saved_data">saved_data</a></code></li>
+<li><code><a title="test_high_score.TestHighScore.test_get_high_score" href="#test_high_score.TestHighScore.test_get_high_score">test_get_high_score</a></code></li>
+<li><code><a title="test_high_score.TestHighScore.test_init_default_object" href="#test_high_score.TestHighScore.test_init_default_object">test_init_default_object</a></code></li>
+<li><code><a title="test_high_score.TestHighScore.test_set_high_score" href="#test_high_score.TestHighScore.test_set_high_score">test_set_high_score</a></code></li>
 </ul>
 </li>
 </ul>

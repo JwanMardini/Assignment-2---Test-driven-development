@@ -109,7 +109,7 @@ pydoc:
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --force --html --output-dir doc/pdoc classes/*.py
+	pdoc --force --html --output-dir doc/pdoc game_classes/*/*.py
 
 pyreverse:
 	@$(call MESSAGE,$@)

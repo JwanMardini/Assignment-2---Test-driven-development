@@ -29,13 +29,16 @@
 </summary>
 <pre><code class="python">&#34;&#34;&#34;A class that represents die.&#34;&#34;&#34;
 import random
-from Classes.dice import Dice
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), &#34;..&#34;)))
 
 
 class DiceHand():
     &#34;&#34;&#34;Methods are created with different functions. An instance of die is created.&#34;&#34;&#34;
 
-    def __init__(self, die) -&gt; Dice:
+    def __init__(self, die):
         &#34;&#34;&#34;Initiliazing the instance. An instance of DiceHand is created.&#34;&#34;&#34;
         self.die = die
 
@@ -67,7 +70,7 @@ class DiceHand():
 <pre><code class="python">class DiceHand():
     &#34;&#34;&#34;Methods are created with different functions. An instance of die is created.&#34;&#34;&#34;
 
-    def __init__(self, die) -&gt; Dice:
+    def __init__(self, die):
         &#34;&#34;&#34;Initiliazing the instance. An instance of DiceHand is created.&#34;&#34;&#34;
         self.die = die
 
