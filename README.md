@@ -68,7 +68,7 @@ make installed
 The game can be started by the following:
 
 ```
-python classes/main.py
+python game_classes/main.py
 ```
 
 
