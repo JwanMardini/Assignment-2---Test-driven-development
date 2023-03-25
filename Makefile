@@ -90,7 +90,7 @@ unittest:
 
 coverage:
 	@$(call MESSAGE,$@)
-	coverage run -m unittest discover
+	coverage run --omit='*/test*' -m unittest discover
 	coverage html
 	coverage report -m
 
@@ -144,7 +144,7 @@ radon-hal:
 
 cohesion:
 	@$(call MESSAGE,$@)
-	cohesion --directory game_classes/*/*.py
+	cohesion game_classes/**/*.py
 
 metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 
