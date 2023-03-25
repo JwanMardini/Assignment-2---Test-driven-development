@@ -3,6 +3,8 @@ exclude =
     .git,
     __pycache__,
     .venv,
-    test/
+    */test*
 max-line-length = 1000
 enable-extensions = pylint,mccabe
+
+ignore = E402

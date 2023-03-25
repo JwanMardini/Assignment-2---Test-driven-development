@@ -20,3 +20,5 @@
 init-hook='import sys; sys.path.append(".")'
 
 max-line-length=1000
+
+disable=C0413

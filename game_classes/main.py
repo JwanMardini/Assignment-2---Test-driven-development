@@ -44,10 +44,10 @@ def main():
                     play = input("Enter y to play again and s to show statics: ").lower()
                     if play == "s":
                         show_statistics(statistics)
-                        quit()
+                        sys.exit()
                 print("Goodbye")
             elif choice == 3:
-                quit()
+                sys.exit()
         except ValueError:
             print("Invalid input, try again.")
             print()
@@ -168,7 +168,7 @@ def cpu_gamesetup(player, player2, statics):
                 player.set_name(player_name)
             elif choice == "2":
                 controller = False
-                exit()
+                sys.exit()
             elif choice == "3":
                 controller = False
                 computer_turn(player, player2, game, statics)
